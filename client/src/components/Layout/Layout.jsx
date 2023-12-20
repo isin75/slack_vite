@@ -1,16 +1,32 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import SideBar from './SideBar/SideBar'
 
 const Layout = () => {
+  const location = useLocation()
+  const shouldShowSidebar = location.pathname !== '/login' && location.pathname !== '/registration'
   return (
     <div className="flex flex-col min-h-screen">
-      <header>{false}</header>
-      <main className="flex-grow flex justify-center items-center h-full">
-        <Outlet />
-      </main>
-      <footer className="p-3">
-        <a href="https://github.com/isin75/vite-react-redux-template">by ISIN</a>
-      </footer>
+      {shouldShowSidebar ? (
+        <>
+          <header>
+            <Header />
+          </header>
+          <main className="flex-grow flex justify-center items-center h-full">
+            <SideBar />
+            <Outlet />
+          </main>
+          <footer className="">
+            <Footer />
+          </footer>
+        </>
+      ) : (
+        <div className="h-screen flex flex-col items-center justify-center bg-[#4A144A]">
+          <Outlet />
+        </div>
+      )}
     </div>
   )
 }
