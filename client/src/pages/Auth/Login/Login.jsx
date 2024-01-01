@@ -1,22 +1,39 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Card, Checkbox, Form, Row, Input } from 'antd'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { setEmail, setPassword } from '../../../../store/reducers/AuthSlice'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import PasswordInput from '../../../common/customPassword/passwordInput'
+import { loginUser } from '../../../../store/reducers/AuthSlice'
 
 const Login = () => {
-  const { email, password } = useSelector((s) => s.authSlice)
+  const { user, status, token } = useSelector((s) => s.authSlice)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+  const location = useLocation()
   const dispatch = useDispatch()
+  const fromPage = location.state?.from?.pathname || '/'
 
   const handleInputEmail = (e) => {
-    dispatch(setEmail(e.target.value))
+    setEmail(e.target.value)
   }
 
   const handleInputPassword = (e) => {
-    dispatch(setPassword(e.target.value))
+    setPassword(e.target.value)
   }
+
+  const handleClickSubmit = async () => {
+    await dispatch(loginUser({ email, password }))
+    setEmail('')
+    setPassword('')
+  }
+
+  useEffect(() => {
+    if (user && token) {
+      navigate(fromPage, { replace: true })
+    }
+  }, [status])
 
   return (
     <Row>
@@ -27,7 +44,7 @@ const Login = () => {
           initialValues={{
             remember: true
           }}
-          onFinish={null}
+          onFinish={handleClickSubmit}
         >
           <Form.Item
             name="username"

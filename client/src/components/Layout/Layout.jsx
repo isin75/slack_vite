@@ -11,14 +11,14 @@ const Layout = () => {
     <div className="flex flex-col min-h-screen">
       {shouldShowSidebar ? (
         <>
-          <header>
+          <header className="top-0 fixed w-full bg-white">
             <Header />
           </header>
-          <main className="flex-grow flex justify-center items-center h-full">
+          <main className="flex-grow flex justify-center items-center h-screen">
             <SideBar />
             <Outlet />
           </main>
-          <footer className="">
+          <footer className="fixed bottom-0 w-full">
             <Footer />
           </footer>
         </>
