@@ -20,7 +20,7 @@ const server = express()
 const httpServer = http.createServer(server)
 const io = new Server(httpServer, {
   cors: {
-    origin: options.clientApi,
+    origin: 'https://dev--sunny-platypus-d1e61f.netlify.app',
     methods: ['GET', 'POST'],
     credentials: true
   }

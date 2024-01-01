@@ -32,7 +32,9 @@ router.get('/api/v1/auth', async (req, res) => {
     delete user.password
     res.cookie('token', token, {
       maxAge: 1000 * 60 * 60 * 48,
-      path: '/'
+      path: '/',
+      sameSite: 'none',
+      secure: true
     })
     res.json({ status: 'ok', token, user })
   } catch (err) {
