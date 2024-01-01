@@ -31,7 +31,7 @@ const __dirname = process.cwd()
 
 const middleware = [
   cors({
-    origin: options.clientApi,
+    origin: 'https://dev--sunny-platypus-d1e61f.netlify.app',
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
