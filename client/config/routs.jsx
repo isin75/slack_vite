@@ -6,7 +6,7 @@ import Login from '../src/pages/Auth/Login/Login'
 import Register from '../src/pages/Auth/Register/Register'
 import AuthProvider from './authProvider'
 import PrivateRoute from './privateRouter'
-import Home from '../src/pages/Home/Home.jsx'
+import Home from '../src/pages/Home/Home'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

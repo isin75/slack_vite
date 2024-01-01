@@ -2,9 +2,10 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 import { createSocket } from '../store'
+import config from '../../config'
 
 const cookies = new Cookies()
-const baseUrl = 'http://localhost:8080/api/v1'
+const baseUrl = config.api
 
 export const trySigIn = createAsyncThunk('auth/trySigIn', async () => {
   const { data } = await axios(`${baseUrl}/auth`, { withCredentials: true })

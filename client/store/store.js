@@ -3,6 +3,7 @@ import { io } from 'socket.io-client'
 
 import rootReducer from './reducers/rootReducer'
 import { setMessagesFromSocket, setOnlineUsers } from './reducers/chatSlice'
+import config from '../config'
 
 const store = configureStore({
   reducer: rootReducer
@@ -11,7 +12,7 @@ const store = configureStore({
 let socket
 
 export const createSocket = (token) => {
-  socket = io(window?.location?.origin, {
+  socket = io(config.ioSocket, {
     reconnection: true,
     reconnectionDelay: 500,
     autoConnect: true,
