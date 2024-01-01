@@ -1,7 +1,7 @@
 import React from 'react'
 import Chat from '../../components/Chat/Chat'
 
-const home = () => {
+const Home = () => {
   return (
     <div className="w-full h-full">
       <Chat />
@@ -9,4 +9,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home
