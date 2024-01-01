@@ -20,7 +20,7 @@ const server = express()
 const httpServer = http.createServer(server)
 const io = new Server(httpServer, {
   cors: {
-    origin: '*',
+    origin: options.clientApi,
     methods: ['GET', 'POST'],
     credentials: true
   }
@@ -31,7 +31,7 @@ const __dirname = process.cwd()
 
 const middleware = [
   cors({
-    origin: '*',
+    origin: options.clientApi,
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
