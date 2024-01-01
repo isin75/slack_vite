@@ -15,7 +15,7 @@ export const trySigIn = createAsyncThunk('auth/trySigIn', async () => {
 
 export const loginUser = createAsyncThunk('auth/loginUser', async ({ email, password }) => {
   const { data } = await axios.post(
-    `${baseUrl}/login`,
+    `${baseUrl}login`,
     {
       email,
       password
@@ -32,14 +32,14 @@ export const loginUser = createAsyncThunk('auth/loginUser', async ({ email, pass
 })
 
 export const activatedUser = createAsyncThunk('auth/activatedUser', async (link) => {
-  await axios(`${baseUrl}/activate/${link}`)
+  await axios(`${baseUrl}activate/${link}`)
 })
 
 export const registerUser = createAsyncThunk(
   'auth/RegisterUser',
   async ({ name, email, password }) => {
     const { data } = await axios.post(
-      `${baseUrl}/registration`,
+      `${baseUrl}registration`,
       {
         name,
         email,
