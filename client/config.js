@@ -1,6 +1,6 @@
 const config = {
-  ioSocket: 'http://localhost:8080/',
-  api: 'http://localhost:8080/api/v1/',
+  ioSocket: 'https://slack-server-inc4.onrender.com',
+  api: 'https://slack-server-inc4.onrender.com/api/v1/',
   isSocket: true
 }
 

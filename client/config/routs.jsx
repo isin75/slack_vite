@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 
 import Layout from '../src/components/Layout/Layout'
-import Home from '../src/pages/Home/Home'
+import Home from '../src/pages/Home/Home.jsx'
 import Login from '../src/pages/Auth/Login/Login'
 import Register from '../src/pages/Auth/Register/Register'
 import AuthProvider from './authProvider'
