@@ -33,7 +33,7 @@ const Footer = () => {
           <PlusOutlined />
         </Button>
         <Input
-          placeholder={`Message to ${currentChannel}`}
+          placeholder={`Message to ${currentChannel.name}`}
           value={message}
           onChange={handleInput}
           onKeyPress={handleClickEnter}

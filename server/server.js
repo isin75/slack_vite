@@ -22,7 +22,8 @@ const io = new Server(httpServer, {
   cors: {
     origin: 'https://slack-vite.vercel.app',
     methods: ['GET', 'POST'],
-    credentials: true
+    credentials: true,
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
   }
 })
 let WSConnections = []
