@@ -1,6 +1,6 @@
 const config = {
-  ioSocket: 'https://slack-vite-vern.vercel.app/',
-  api: 'https://slack-vite-vern.vercel.app/api/v1/',
+  ioSocket: 'https://slack-vite-vern-gxheddp27-ivan-shyshykins-projects.vercel.app/',
+  api: 'https://slack-vite-vern-gxheddp27-ivan-shyshykins-projects.vercel.app/api/v1/',
   isSocket: true
 }
 
