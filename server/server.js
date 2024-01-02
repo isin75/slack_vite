@@ -20,7 +20,7 @@ const server = express()
 const httpServer = http.createServer(server)
 const io = new Server(httpServer, {
   cors: {
-    origin: 'https://dev--sunny-platypus-d1e61f.netlify.app',
+    origin: 'https://slack-vite-vern.vercel.app/',
     methods: ['GET', 'POST'],
     credentials: true
   }
@@ -31,7 +31,7 @@ const __dirname = process.cwd()
 
 const middleware = [
   cors({
-    origin: 'https://dev--sunny-platypus-d1e61f.netlify.app',
+    origin: 'https://slack-vite-vern.vercel.app/',
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
