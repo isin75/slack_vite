@@ -33,8 +33,7 @@ router.get('/api/v1/auth', async (req, res) => {
     res.cookie('token', token, {
       maxAge: 1000 * 60 * 60 * 48,
       path: '/',
-      httpOnly: true,
-      domain: 'vercel.app'
+      httpOnly: true
     })
     res.json({ status: 'ok', token, user })
   } catch (err) {
@@ -52,8 +51,7 @@ router.post('/api/v1/login', async (req, res) => {
     res.cookie('token', token, {
       maxAge: 1000 * 60 * 60 * 48,
       path: '/',
-      httpOnly: true,
-      domain: 'vercel.app'
+      httpOnly: true
     })
     res.json({ status: 'ok', token, user })
   } catch (err) {
