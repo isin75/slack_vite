@@ -52,7 +52,7 @@ router.post('/api/v1/login', async (req, res) => {
     res.cookie('token', token, {
       maxAge: 1000 * 60 * 60 * 48,
       path: '/',
-      httpOnly: true,
+      secure: 'true',
       sameSite: 'none'
     })
     res.json({ status: 'ok', token, user })
